@@ -1,0 +1,58 @@
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "../../include/entrees.h"
+
+
+
+int lire_fin_ligne() {  
+    int cpt=0;
+    char c;
+    
+    c=getchar();
+    while ((c!=EOF) && (c!='\n')) {
+        
+        if (!isspace(c)) {
+            cpt+=1;
+        }
+        c=getchar();
+    }
+    
+    return cpt;
+}
+
+
+
+int lire_entier(int *entier) {
+    lit_format("%d", entier);
+    return 0;
+}
+
+
+
+int lire_decimal(float *decimal) {
+    lit_format("%f", decimal);
+    return 0;
+}
+
+
+
+void lit_format(char * format , void * a) {
+    int nbLus;
+    int nbJetes;
+    
+    do {
+        nbLus=scanf(format, a);
+        nbJetes=lire_fin_ligne();
+    } while ((nbLus!=1) || (nbJetes!=0)) ;
+    
+}
+
+
+
+int lire_entier_positif(int *entier_positif) {
+    do {
+        lire_entier(entier_positif);
+    } while ((*entier_positif) < 0) ;
+    return 0;
+}
