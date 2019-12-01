@@ -1,4 +1,4 @@
-CC= clang
+CC= gcc
 CFLAGS=  -Wall -g #-std=c11
 LIB= ../../lib
 LDFLAGS= -lm
