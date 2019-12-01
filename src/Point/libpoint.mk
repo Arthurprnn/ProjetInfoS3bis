@@ -1,20 +1,13 @@
-CC= gcc
-CFLAGS=  -Wall -g #-std=c11
-LIB= ../../lib
-LDFLAGS= -lm
-INC= ../../include
-EXEC= libpoint.a
-SRC= point.c
-OBJ= $(SRC:.c=.o)
-
-all : $(EXEC)
-
-point.o : point.c
-	$(CC) $(CFLAGS)  -c point.c -I $(INC) -L $(LIB)
-
-$(EXEC) : $(OBJ) $(INC)/point.h
-	ar rcs $(LIB)/libpoint.a $(OBJ)
-	ranlib $(LIB)/libpoint.a
+CC=gcc
+CFLAGS=-Wall -g
+LIB=../../lib
+INC=../../include
+EXEC=test.exe
+SRC=test.c
+OBJ=$(SRC:.c=.o)
+all:$(EXEC)
+$(EXEC): $(LIB)/libpoint.a
+	$(CC) $(CFLAGS) test.c -o test.exe -I $(INC)
 
 clean:
-	rm $(LIB)/libpoint.a point.o
+	rm *.exe *.o
