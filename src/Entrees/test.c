@@ -5,8 +5,5 @@
 
 int main(int argc, char *argv[]) {
 
-    float x;
-    lire_decimal(&x);
-
     return 0;
 }
