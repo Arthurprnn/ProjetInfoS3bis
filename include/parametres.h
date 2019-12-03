@@ -3,7 +3,6 @@
 #include <stdbool.h>
 
 
-
 // Structure des différents paramètres des différents systèmes dynamiques
 typedef struct Param_Lorentz{
 	double S;

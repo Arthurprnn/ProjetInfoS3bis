@@ -27,6 +27,7 @@ Coordonnees nouvelle_position_Lorentz(Coordonnees coo, Param parametre, double d
 }
 
 
+
 //Calcul position Rossler
 Coordonnees nouvelle_position_Rossler(Coordonnees coo, Param parametre, double dt){
     double A;
