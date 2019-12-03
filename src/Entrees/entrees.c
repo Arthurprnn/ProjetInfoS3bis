@@ -79,15 +79,13 @@ int choix_systeme(int * choix) {
     printf("que vous souhaitez modéliser parmi nos 3 possibilités : \n");
     printf("\n");
     printf("1 - Attracteur de Lorentz (défaut)\n");
-    printf("2 - Attracteur de Van der Pol\n");
-    printf("3 - Attracteur de Rossler\n");
+    printf("2 - Attracteur de Rossler\n");
     printf("\nNB: - pour sélectionner votre choix, entrez le numéro correspondant\n");
-    printf("    - si le numéro entré ne fait pas parti des choix proposés, alors le choix par défaut sera utilisé\n");
     printf("    - si il y a une erreur dans votre entrée, le programme vous demandera une autre entrée correcte\n");
     printf("\n");
 
     do {
         lire_entier_positif(choix);
-    } while ((*choix==0) || (*choix>3));
+    } while ((*choix==0) || (*choix>2));
     return 0;
 }

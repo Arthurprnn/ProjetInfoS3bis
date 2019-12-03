@@ -5,9 +5,9 @@
 
 
 //Fonctions assignant les paramètres du choix de l'utilisateur dans l'union
-Param setLorenz(Param_Lorenz L, Param P){
+Param setLorentz(Param_Lorentz L, Param P){
 	P = (Param)malloc(sizeof(Param_s));
-	P->lorenz = (Param_Lorenz)L;
+	P->lorentz = (Param_Lorentz)L;
 	return P;
 }
 
@@ -19,11 +19,11 @@ Param setRossler(Param_Rossler R, Param P){
 }
 
 
-//Récupère les paramètres stockés - Lorenz
-void get_Param_Lorenz(Param param, double *S, double *P, double *B){
-	(*S) = param->lorenz->S;
-	(*P) = param->lorenz->P;
-	(*B) = param->lorenz->B;
+//Récupère les paramètres stockés - Lorentz
+void get_Param_Lorentz(Param param, double *S, double *P, double *B){
+	(*S) = param->lorentz->S;
+	(*P) = param->lorentz->P;
+	(*B) = param->lorentz->B;
 }
 
 
@@ -36,15 +36,15 @@ void get_Param_Rossler(Param param, double *A, double *B, double *C){
 
 
 //Remplissage des paramètres des différents systèmes dynamiques
-Param setParamLorenz(Param param, double B, double P, double S){
-	Param_Lorenz parametersL;
-	parametersL = (Param_Lorenz)malloc(sizeof(Param_Lorenz_s));
+Param setParamLorentz(Param param, double B, double P, double S){
+	Param_Lorentz parametersL;
+	parametersL = (Param_Lorentz)malloc(sizeof(Param_Lorentz_s));
 	
 	parametersL->B = B;
 	parametersL->P = P;
 	parametersL->S = S;
 
-	return setLorenz(parametersL,param);
+	return setLorentz(parametersL,param);
 }
 
 
