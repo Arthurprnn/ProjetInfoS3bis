@@ -48,4 +48,3 @@ Coordonnees nouvelle_position_Rossler(Coordonnees coo, Param parametre, double d
     
     return coo;
 }
-
