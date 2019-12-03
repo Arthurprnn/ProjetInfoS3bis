@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
 int lire_fin_ligne();
 
 int lire_entier(int *entier);

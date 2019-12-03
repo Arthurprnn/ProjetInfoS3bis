@@ -44,6 +44,3 @@ float valeur_t(Coordonnees new_pose){
     float t=new_pose->t;
     return t;
 }
-
-
-//Attracteur de Lorentz

@@ -4,7 +4,6 @@
 #include "../../include/parametres.h"
 
 
-
 //Fonctions assignant les paramètres du choix de l'utilisateur dans l'union
 Param setLorenz(Param_Lorenz L, Param P){
 	P = (Param)malloc(sizeof(Param_s));
@@ -13,13 +12,11 @@ Param setLorenz(Param_Lorenz L, Param P){
 }
 
 
- 
 Param setRossler(Param_Rossler R, Param P){
 	P = (Param)malloc(sizeof(Param_s));
 	P->rossler = (Param_Rossler)R;	
 	return P;
 }
-
 
 
 //Récupère les paramètres stockés - Lorenz
@@ -30,14 +27,12 @@ void get_Param_Lorenz(Param param, double *S, double *P, double *B){
 }
 
 
-
 //Récupère les paramètres stockés - Rossler
 void get_Param_Rossler(Param param, double *A, double *B, double *C){
 	(*A) = param->rossler->A;
 	(*B) = param->rossler->B;
 	(*C) = param->rossler->C;
 }
-
 
 
 //Remplissage des paramètres des différents systèmes dynamiques
@@ -51,7 +46,6 @@ Param setParamLorenz(Param param, double B, double P, double S){
 
 	return setLorenz(parametersL,param);
 }
-
 
 
 Param setParamRossler(Param param, double A, double B, double C){

@@ -6,9 +6,6 @@
 
 
 // Lecture d'un des types d'entrée, entré par l'utilisateur :
-
-
-
 int lire_fin_ligne() {  
     int cpt=0;
     char c;
@@ -26,12 +23,10 @@ int lire_fin_ligne() {
 }
 
 
-
 int lire_entier(int *entier) {
     lit_format("%d", entier);
     return 0;
 }
-
 
 
 int lire_decimal(float *decimal) {
@@ -40,19 +35,16 @@ int lire_decimal(float *decimal) {
 }
 
 
-
 int lire_long_decimal(double *long_decimal) {
     lit_format("%lf", long_decimal);
     return 0;
 }
 
 
-
 int lire_chaine(char *chaine) {
     lit_format("%s", chaine);
     return 0;
 }
-
 
 
 void lit_format(char * format , void * a) {
@@ -67,7 +59,6 @@ void lit_format(char * format , void * a) {
 }
 
 
-
 int lire_entier_positif(int *entier_positif) {
     do {
         lire_entier(entier_positif);
@@ -76,11 +67,7 @@ int lire_entier_positif(int *entier_positif) {
 }
 
 
-
 // Lecture du choix du système dynamique :
-
-
-
 int choix_systeme(int * choix) {
     printf("\n----------------------------------------------------------------------------------------------\n");
     printf("                                           SYSTEMES                                             \n");
