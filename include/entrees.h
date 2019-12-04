@@ -25,3 +25,5 @@ Coordonnees choix_position(int choix);
 double choix_dt();
 
 double choix_Tmax();
+
+Param choix_parametre (int choix);

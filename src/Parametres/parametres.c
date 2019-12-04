@@ -36,13 +36,13 @@ void get_Param_Rossler(Param param, double *A, double *B, double *C){
 
 
 //Remplissage des paramètres des différents systèmes dynamiques
-Param setParamLorentz(Param param, double B, double P, double S){
+Param setParamLorentz(Param param, double S, double P, double B){
 	Param_Lorentz parametersL;
 	parametersL = (Param_Lorentz)malloc(sizeof(Param_Lorentz_s));
 	
-	parametersL->B = B;
-	parametersL->P = P;
 	parametersL->S = S;
+	parametersL->P = P;
+	parametersL->B = B;
 
 	return setLorentz(parametersL,param);
 }

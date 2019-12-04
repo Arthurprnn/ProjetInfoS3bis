@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../../include/entrees.h"
+#include "../../include/point.h"
+#include "../../include/parametres.h"
 #define DT_MIN 0.0005
 #define DT_MAX 0.01
 #define TMIN 10
@@ -210,4 +212,71 @@ double choix_Tmax() {
         }
     }
     return Tmax;
+}
+
+
+Param choix_parametre (int choix) {
+    double S;
+    double P;
+    double B;
+    int g;
+    
+    printf("D'après votre choix, on peut vous proposer les paramètres par défaut.\n");
+    printf("Veuillez entrer le numéro correspondant à votre choix :\n");
+    printf("\n");
+    printf("    0 - Paramètres par défaut\n");
+    printf("    1 - Paramètres de votre choix\n");
+    printf("\n");
+
+    if (choix==1) {        // Choix de l'attracteur de Lorentz
+        
+        Param_Lorentz pLorentz;
+
+        do {
+            lire_entier_positif(&g);
+        } while ((g!=0) || (g!=1));
+
+        if (g==0) {
+            S=10;
+            P=28;
+            B=8/3;
+            printf("Les paramètres par défaut sont : S=%lf P=%lf B=%lf\n", S, P, B);
+        }
+        else {
+            printf("Entrez les paramètres de votre choix : \n");
+            lire_long_decimal(&S);
+            lire_long_decimal(&P);
+            lire_long_decimal(&B);
+            printf("Les paramètres choisis sont : S=%lf P=%lf B=%lf\n", S, P, B);
+        }
+        setParamLorentz(pLorentz,S,P,B);
+        return pLorentz;
+    }
+    else {        // Choix de l'attracteur de Rossler
+        
+        Param_Rossler pRossler;
+
+        do {
+            lire_entier_positif(&g);
+        } while ((g!=0) || (g!=1));
+
+        if (g==0) {
+            S=0.1;
+            P=0.1;
+            B=14;
+            printf("Les paramètres par défaut sont : S=%lf P=%lf B=%lf\n", S, P, B);
+        }
+        else {
+            printf("Entrez les paramètres de votre choix : \n");
+            
+            lire_long_decimal(&S);
+            lire_long_decimal(&P);
+            lire_long_decimal(&B);
+
+            printf("Les paramètres choisis sont : S=%lf P=%lf B=%lf\n", S, P, B);
+        }
+
+        setParamRossler(pRossler,S,P,B);
+        return pRossler;
+    }
 }
