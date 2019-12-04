@@ -17,9 +17,9 @@ int main(int argc, char * argv []){
     double dt;                                    
     initialisation_fichier(DATA);
     choix_systeme(&choix);
-    //Coordonnees point = choix_position(choix);      A FAIRE !!
-    //choix_dt(&dt);
-    //choix_Tmax(&Tmax);
+    Coordonnees point = choix_position(choix);
+    choix_dt(&dt);
+    choix_Tmax(&Tmax);
     //parametres = choix_parametre(choix);
     FILE * fichier = NULL;
     fichier = fopen(DATA,"a");
