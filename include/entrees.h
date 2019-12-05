@@ -21,16 +21,6 @@ void lit_format(char * format , void * a);
 
 int lire_entier_positif(int *entier_positif);
 
-int lire_long_decimal_positif(int *long_decimal_positif);
-
-int choix_systeme(int * choix);
-
-Coordonnees choix_position(int choix);
-
-double choix_dt();
-
-double choix_Tmax();
-
-Param choix_parametre (int choix);
+int lire_long_decimal_positif(double *long_decimal_positif);
 
 #endif

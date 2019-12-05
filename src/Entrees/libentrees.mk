@@ -10,7 +10,7 @@ OBJ= $(SRC:.c=.o)
 all : $(EXEC)
 
 entrees.o : entrees.c 
-	$(CC) $(CFLAGS)  -c entrees.c -I $(INC)
+	$(CC) $(CFLAGS)  -c entrees.c $(LDFLAGS) -I $(INC) -L $(LIB)
 
 $(EXEC) : $(OBJ) $(INC)/entrees.h
 	ar rcs $(LIB)/libentrees.a $(OBJ)

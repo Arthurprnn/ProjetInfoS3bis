@@ -2,7 +2,7 @@
 CC= gcc
 CFLAGS=  -Wall -g #-std=c11
 LIB= ../../lib
-LDFLAGS= -lm 
+LDFLAGS= -lm -lpoint -lparametres -lentrees
 INC= ../../include
 EXEC= test.exe
 SRC= test.c

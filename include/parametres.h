@@ -25,4 +25,7 @@ void getParam(Param param, double *S, double *P, double *B);
 //Remplissage des paramètres par leur valeur
 Param setParam(double S, double P, double B);
 
+
+Param choix_parametre (int choix);
+
 #endif
