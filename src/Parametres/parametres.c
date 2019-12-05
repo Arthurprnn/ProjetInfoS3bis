@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "../../include/parametres.h"
+#include "../../include/entrees.h"
 
 //Remplissage des paramètres des différents systèmes dynamiques
 Param setParam(double S, double P, double B){
@@ -43,18 +44,22 @@ Param choix_parametre (int choix) {
 
         do {
             lire_entier_positif(&g);
-        } while ((g!=0) || (g!=1));
+        } while ((g<0) || (g>1));
 
         if (g==0) {
             S=10;
             P=28;
-            B=8/3;
+            B=2.666666667;
             printf("Les paramètres par défaut sont : S=%lf P=%lf B=%lf\n", S, P, B);
         }
         else {
             printf("Entrez les paramètres de votre choix : \n");
+
+            printf("S = ");
             lire_long_decimal(&S);
+            printf("P = ");
             lire_long_decimal(&P);
+            printf("B = ");
             lire_long_decimal(&B);
             printf("Les paramètres choisis sont : S=%lf P=%lf B=%lf\n", S, P, B);
         }
@@ -67,7 +72,7 @@ Param choix_parametre (int choix) {
 
         do {
             lire_entier_positif(&g);
-        } while ((g!=0) || (g!=1));
+        } while ((g<0) || (g>1));
 
         if (g==0) {
             S=0.1;
@@ -77,9 +82,11 @@ Param choix_parametre (int choix) {
         }
         else {
             printf("Entrez les paramètres de votre choix : \n");
-            
+            printf("A = ");
             lire_long_decimal(&S);
+            printf("B = ");
             lire_long_decimal(&P);
+            printf("C = ");
             lire_long_decimal(&B);
 
             printf("Les paramètres choisis sont : S=%lf P=%lf B=%lf\n", S, P, B);

@@ -14,7 +14,7 @@ Coordonnees nouvelle_position_Rossler(Coordonnees coo, Param parametre, double d
     double nouveau_z;
     double nouveau_t;
 
-    get_Param_Rossler(parametre, &A, &B, &C);
+    getParam(parametre, &A, &B, &C);
     nouveau_x = valeur_x(coo) +(-valeur_y(coo) -valeur_z(coo) ) * dt;
     nouveau_y = valeur_y(coo) + ( valeur_x(coo) + A * valeur_y(coo) ) * dt;
     nouveau_z = valeur_z(coo) + ( B + valeur_z(coo) * (valeur_x(coo) - C ) ) *dt;

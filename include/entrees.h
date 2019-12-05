@@ -3,8 +3,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "point.h"
-#include "parametres.h"
 
 
 int lire_fin_ligne();

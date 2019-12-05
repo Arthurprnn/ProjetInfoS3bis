@@ -57,7 +57,7 @@ Coordonnees choix_position(int choix) {
         
         do {
             lire_entier_positif(&g);
-        } while ((g!=0) || (g!=1));
+        } while ((g<0) || (g>1));
 
         if (g==0) {
             x=1;
@@ -67,8 +67,11 @@ Coordonnees choix_position(int choix) {
         }
         else {
             printf("Entrez les positions initiales de votre choix : \n");
+            printf("x = ");
             lire_long_decimal(&x);
+            printf("y = ");
             lire_long_decimal(&y);
+            printf("z = ");
             lire_long_decimal(&z);
             printf("Les positions initiales choisies sont à t=0 : x=%lf y=%lf z=%lf\n", x, y, z);
         }
@@ -77,7 +80,7 @@ Coordonnees choix_position(int choix) {
         
         do {
             lire_entier_positif(&g);
-        } while ((g!=0) || (g!=1));
+        } while ((g<0) || (g>1));
 
         if (g==0) {
             x=0.1;
@@ -88,8 +91,11 @@ Coordonnees choix_position(int choix) {
         else {
             printf("Entrez les positions initiales de votre choix : \n");
             
+            printf("x = ");
             lire_long_decimal(&x);
+            printf("y = ");
             lire_long_decimal(&y);
+            printf("z = ");
             lire_long_decimal(&z);
 
             printf("Les positions initiales choisies sont à t=0 : x=%lf y=%lf z=%lf\n", x, y, z);
@@ -111,7 +117,7 @@ double choix_dt() {
 
     do {
         lire_entier_positif(&g);
-    } while ((g!=0) || (g!=1));
+    } while ((g<0) || (g>1));
 
     if (g==1) {
         printf("Entrez le dt que vous souhaitez : \n");
@@ -136,7 +142,7 @@ double choix_Tmax() {
 
     do {
         lire_entier_positif(&g);
-    } while ((g!=0) || (g!=1));
+    } while ((g<0) || (g>1));
 
     if (g==1) {
         printf("Entrez le Tmax que vous souhaitez : \n");
@@ -169,7 +175,7 @@ int main(int argc, char * argv []){
     FILE * fichier = NULL;
     fichier = fopen(DATA,"a");
 
-    if (fichier != NULL){
+    if (fichier == NULL){
         remplir_fichier(fichier, point);
         while (valeur_t(point) < Tmax){
             if (choix == 1){
@@ -183,9 +189,15 @@ int main(int argc, char * argv []){
         fclose(fichier);
     }
     else {
-        printf("Erreur 404 : Impossible d'ouvrir le fichier Verolabest.dat");
+        printf("Erreur 404 : Impossible d'ouvrir le fichier Verolabest.dat\n");
     }
     //trace_courbe(choix);
+    if (choix==1) {
+        system("./lorenz.sh");
+    }
+    else {
+        system("./rossler.sh");
+    }
     return 0; 
 
 }
