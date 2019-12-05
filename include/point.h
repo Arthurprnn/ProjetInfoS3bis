@@ -1,10 +1,13 @@
+#ifndef __POINT__
+#define __POINT__
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
 
 //structure de la Position
-struct Coordonnees {                
+struct Coordonnees_s {                
     double x;
     double y;
     double z;
@@ -13,8 +16,8 @@ struct Coordonnees {
 
 
 //Nom de la structure
-typedef struct Coordonnees Position;
-typedef struct Coordonnees* Coordonnees;
+typedef struct Coordonnees_s Position;
+typedef struct Coordonnees_s* Coordonnees;
 
 
 //nouvelle coordonnees
@@ -35,3 +38,5 @@ float valeur_z(Coordonnees new_pose);
 
 //Recuperer la valeur de t
 float valeur_t(Coordonnees new_pose);
+
+#endif

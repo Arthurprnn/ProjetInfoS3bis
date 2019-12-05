@@ -20,7 +20,7 @@ int main(int argc, char * argv []){
     Coordonnees point = choix_position(choix);
     choix_dt(&dt);
     choix_Tmax(&Tmax);
-    //parametres = choix_parametre(choix);
+    parametres = choix_parametre(choix);
     FILE * fichier = NULL;
     fichier = fopen(DATA,"a");
 

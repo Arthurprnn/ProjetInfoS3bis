@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../../include/point.h"
-#include "../Point/point.c"
-#include "../Parametres/parametres.c"
+#include "../../include/parametres.h"
 
 
 //Calcul position Lorentz

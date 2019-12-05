@@ -1,5 +1,10 @@
+#ifndef __ENTREES__
+#define __ENTREES__
+
 #include <stdio.h>
 #include <stdlib.h>
+#include "point.h"
+#include "parametres.h"
 
 
 int lire_fin_ligne();
@@ -27,3 +32,5 @@ double choix_dt();
 double choix_Tmax();
 
 Param choix_parametre (int choix);
+
+#endif

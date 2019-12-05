@@ -1,13 +1,20 @@
-CC=gcc
-CFLAGS=-Wall -g
-LIB=../../lib
-INC=../../include
-EXEC=test.exe
-SRC=test.c
-OBJ=$(SRC:.c=.o)
-all:$(EXEC)
-$(EXEC): $(LIB)/libparametres.a
-	$(CC) $(CFLAGS) test.c -o test.exe -I $(INC)
+CC= gcc
+CFLAGS=  -Wall -g #-std=c11
+LIB= ../../lib
+LDFLAGS= -lm
+INC= ../../include
+EXEC= libparametres.a
+SRC= parametres.c
+OBJ= $(SRC:.c=.o)
+
+all : $(EXEC)
+
+parametres.o : parametres.c 
+	$(CC) $(CFLAGS)  -c parametres.c -I $(INC)
+
+$(EXEC) : $(OBJ) $(INC)/parametres.h
+	ar rcs $(LIB)/libparametres.a $(OBJ)
+	ranlib $(LIB)/libparametres.a
 
 clean:
-	rm *.exe *.o
+	rm $(LIB)/libparametres.a parametres.o

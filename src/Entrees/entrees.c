@@ -230,7 +230,7 @@ Param choix_parametre (int choix) {
 
     if (choix==1) {        // Choix de l'attracteur de Lorentz
         
-        Param_Lorentz pLorentz;
+        Param pLorentz;
 
         do {
             lire_entier_positif(&g);
@@ -249,12 +249,12 @@ Param choix_parametre (int choix) {
             lire_long_decimal(&B);
             printf("Les paramètres choisis sont : S=%lf P=%lf B=%lf\n", S, P, B);
         }
-        setParamLorentz(pLorentz,S,P,B);
+        pLorentz = setParam(S,P,B);
         return pLorentz;
     }
     else {        // Choix de l'attracteur de Rossler
         
-        Param_Rossler pRossler;
+        Param pRossler;
 
         do {
             lire_entier_positif(&g);
@@ -276,7 +276,7 @@ Param choix_parametre (int choix) {
             printf("Les paramètres choisis sont : S=%lf P=%lf B=%lf\n", S, P, B);
         }
 
-        setParamRossler(pRossler,S,P,B);
+        pRossler = setParam(S,P,B);
         return pRossler;
     }
 }
