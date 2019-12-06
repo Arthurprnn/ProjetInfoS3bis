@@ -1,13 +1,9 @@
+#set terminal pngcairo  transparent enhanced font "arial,10" fontscale 1.0 size 600, 400 
+set terminal wxt size 350,262 enhanced font 'Verdana,10' 
+#set output 'Lorenz.1.png'
+
 set parametric
-set title textcolor "red" "Attracteur de Lorenz"
-set grid
-set xlabel "x"
-set ylabel "y"
-set zlabel offset +5 +4 "z"
+splot "../position.dat" using 2:3:4 
 
-h1 = -50/360.0
-h2 = 227/360.0
-set palette model HSV functions (1-gray)*(h2-h1)+h1,1,0.68
-
-splot "../position.dat" u 2:3:4:1 w l lc palette
-pause -1 "Tapez \"Entrez\" pour fermer la fenetre"
+#pause jusqu'à ce que ENTER soit tapé dans le terminal
+pause -1
