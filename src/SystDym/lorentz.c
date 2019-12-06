@@ -2,10 +2,12 @@
 #include <stdlib.h>
 #include "../../include/point.h"
 #include "../../include/parametres.h"
+#include "../../include/lorentz.h"
 
 
 //Calcul position Lorentz
 Coordonnees nouvelle_position_Lorentz(Coordonnees coo, Param parametre, double dt){
+    
     double S;
     double P;
     double B;

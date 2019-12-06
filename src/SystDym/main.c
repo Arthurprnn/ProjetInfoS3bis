@@ -4,6 +4,8 @@
 #include "../../include/point.h"
 #include "../../include/parametres.h"
 #include "../../include/fichier.h"
+#include "../../include/lorentz.h"
+#include "../../include/rossler.h"
 
 
 //include gnuplot.h
@@ -169,14 +171,14 @@ int main(int argc, char * argv []){
     double dt;                                    
     choix_systeme(&choix);
     Coordonnees point = choix_position(choix);
-    choix_dt(&dt);
-    choix_Tmax(&Tmax);
+    dt = choix_dt();
+    Tmax = choix_Tmax();
     parametres = choix_parametre(choix);
     FILE * fichier = NULL;
     fichier = fopen(DATA,"a");
 
     if (fichier == NULL){
-        remplir_fichier(fichier, point);
+        //remplir_fichier(fichier, point);
         while (valeur_t(point) < Tmax){
             if (choix == 1){
                 point = nouvelle_position_Lorentz(point, parametres, dt);

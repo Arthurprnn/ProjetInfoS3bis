@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "../../include/point.h"
 #include "../../include/parametres.h"
+#include "../../include/rossler.h"
+
 
 
 //Calcul position Rossler
