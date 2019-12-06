@@ -2,4 +2,4 @@
 export DISPLAY=:0
 
 #On lance Gnuplot
-gnuplot ../data/Gnuplot/parametreLorentz
+gnuplot ../data/Gnuplot/parametreLorentz.gnu

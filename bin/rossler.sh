@@ -2,4 +2,4 @@
 export DISPLAY=:0
 
 #On lance Gnuplot
-gnuplot ../data/Gnuplot/parametreRossler
+gnuplot ../data/Gnuplot/parametreRossler.gnu

@@ -164,21 +164,24 @@ double choix_Tmax() {
 
 int main(int argc, char * argv []){
 
-    const char DATA[128] = "../data/position.dat";
+    const char DATA[128] = "../../data/position.dat";
     int choix;
     Param parametres;
     double Tmax;
-    double dt;                                    
+    double dt; 
+
+    init_fichier(DATA);
+
     choix_systeme(&choix);
     Coordonnees point = choix_position(choix);
     dt = choix_dt();
     Tmax = choix_Tmax();
     parametres = choix_parametre(choix);
+
     FILE * fichier = NULL;
     fichier = fopen(DATA,"a");
 
-    if (fichier == NULL){
-        //remplir_fichier(fichier, point);
+    if (fichier != NULL){
         while (valeur_t(point) < Tmax){
             if (choix == 1){
                 point = nouvelle_position_Lorentz(point, parametres, dt);
@@ -189,17 +192,16 @@ int main(int argc, char * argv []){
             remplir_fichier(fichier, point);
         }
         fclose(fichier);
+
+        if (choix==1) {
+            system("../../bin/lorentz.sh");
+        }
+        else {
+            system("../../bin/rossler.sh");
+        }
     }
     else {
         printf("Erreur 404 : Impossible d'ouvrir le fichier Verolabest.dat\n");
     }
-    //trace_courbe(choix);
-    if (choix==1) {
-        system("./lorenz.sh");
-    }
-    else {
-        system("./rossler.sh");
-    }
-    return 0; 
-
+    return 0;
 }
