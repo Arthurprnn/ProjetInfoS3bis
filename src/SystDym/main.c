@@ -12,7 +12,7 @@
 #define DT_MIN 0.0005
 #define DT_MAX 0.01
 #define TMIN 10
-#define TMAX 1500
+#define TMAX 5000
 
 
 
@@ -134,11 +134,11 @@ double choix_dt() {
 
 
 double choix_Tmax() {
-    double Tmax=1000;
+    double Tmax=2000;
     int g;
 
     printf("Rentrez le numéro correspondant à un choix de Tmax :\n");
-    printf("    0 - Tmax=1000 par défaut\n");
+    printf("    0 - Tmax=2000 par défaut\n");
     printf("    1 - Tmax que vous souhaitez appartenant à [10 ; 5000]\n");
     printf("\n");
 
@@ -151,7 +151,7 @@ double choix_Tmax() {
         lire_long_decimal_positif(&Tmax);
         if ((Tmax<TMIN) || (Tmax>TMAX)) {
             printf("Vous avez choisi une valeur de Tmax en dehors des bornes. Tmax prend alors la valeur par défaut.\n");
-            Tmax=1000;
+            Tmax=2000;
         }
     }
     return Tmax;
@@ -180,7 +180,6 @@ int main(int argc, char * argv []){
 
     FILE * fichier = NULL;
     fichier = fopen(DATA,"w+");
-
     if (fichier != NULL){
         remplir_fichier(fichier, point);
         while (valeur_t(point) < Tmax){
@@ -195,10 +194,10 @@ int main(int argc, char * argv []){
         fclose(fichier);
 
         if (choix==1) {
-            system("gnuplot -persist ../../data/Gnuplot/parametreLorentz.gnu");
+            system("gnuplot -persist ../../bin/lorentz.sh");
         }
         else {
-            system("gnuplot -persist ../../data/Gnuplot/parametreRossler.gnu");
+            system("gnuplot -persist ../../bin/rossler.sh");
         }
     }
     else {
