@@ -8,10 +8,10 @@
 
 //structure de la Position
 struct Coordonnees_s {                
+    double t;
     double x;
     double y;
-    double z;
-    double t;  // variable du temps
+    double z;  // variable du temps
 };
 
 
